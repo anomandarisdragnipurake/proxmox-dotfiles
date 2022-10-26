@@ -113,7 +113,7 @@ if ! shopt -oq posix; then
 fi
 # BEGIN ANSIBLE MANAGED BLOCK
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
-alias l='ls -CF'
+alias l='ls -al'
 alias la='ls -AF'
 alias ll='ls -alF'
 # END ANSIBLE MANAGED BLOCK
