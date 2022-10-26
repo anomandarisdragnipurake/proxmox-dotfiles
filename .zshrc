@@ -90,8 +90,6 @@ plugins=(git docker docker-compose debian colored-man-pages vi-mode z autoupdate
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/.config/zsh_custom/restic-completion.zsh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
