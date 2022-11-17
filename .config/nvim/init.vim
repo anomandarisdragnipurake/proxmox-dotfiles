@@ -74,6 +74,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vim-airline/vim-airline'
 Plug 'ap/vim-css-color'
+Plug 'mtdl9/vim-log-highlighting'
 
 " Initialize plugin system
 call plug#end()
