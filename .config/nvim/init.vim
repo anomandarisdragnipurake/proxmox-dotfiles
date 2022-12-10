@@ -116,4 +116,7 @@ nnoremap <Leader>ve :e $MYVIMRC<CR>
 " Reload vimrc configuration file
 nnoremap <Leader>vr :source $MYVIMRC<CR>
 
+" Quick move to next buffer
+nnoremap <Leader>b :bn<CR>
+
 " let $FZF_DEFAULT_COMMAND = 'find .'
