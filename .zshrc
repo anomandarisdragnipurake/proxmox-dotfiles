@@ -15,6 +15,8 @@ fi
 # Example to use figlet in vim
 # figlet .vimrc | sed -n 's/^.*/"   &/p'
 
+# batcat theme.
+export BAT_THEME="Dracula"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/$USER/.oh-my-zsh"
