@@ -134,6 +134,7 @@ alias pf="ping pfsense.org"
 alias ip="ip -c=always"
 alias rm="rm -i"
 alias dip="docker image prune"
+alias dtail='docker logs -tf --tail='50' '
 
 source ~/.zsh_aliases
 
