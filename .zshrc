@@ -21,7 +21,7 @@ compinit -d $HOME/.config/zsh/.zcompdump
 export BAT_THEME="Dracula"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/$USER/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Use ripgrep for fzf and show hidden files
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
