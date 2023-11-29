@@ -1,1 +1,1 @@
-# debian-testing-dotfiles
+# debian-dotfiles
