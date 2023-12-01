@@ -19,7 +19,7 @@ compinit -d $HOME/.config/zsh/.zcompdump
 # figlet .vimrc | sed -n 's/^.*/"   &/p'
 
 # batcat theme.
-export BAT_THEME="Catppuccin-macchiato"
+export BAT_THEME="ansi-dark"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
