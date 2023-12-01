@@ -143,4 +143,6 @@ source ~/.zsh_aliases
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
+sh /etc/profile.d/figurine.sh
+
 LS_COLORS=$LS_COLORS:'ow=32;100:' ; export LS_COLORS
