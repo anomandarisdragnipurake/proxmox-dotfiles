@@ -18,6 +18,9 @@ compinit -d $HOME/.config/zsh/.zcompdump
 # Example to use figlet in vim
 # figlet .vimrc | sed -n 's/^.*/"   &/p'
 
+# Colourful sudo prompt
+export SUDO_PROMPT="$(tput setab 1 setaf 0 bold)[sudo]$(tput sgr0) $(tput setaf 6)password for$(tput sgr0) $(tput setaf 5)%p$(tput sgr0): "
+
 sh /etc/profile.d/figurine.sh
 
 # batcat theme.
