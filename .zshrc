@@ -5,9 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-autoload -Uz compinit
-compinit -d $HOME/.config/zsh/.zcompdump
-
 #              _              
 #      _______| |__  _ __ ___ 
 #     |_  / __| '_ \| '__/ __|
@@ -18,19 +15,23 @@ compinit -d $HOME/.config/zsh/.zcompdump
 # Example to use figlet in vim
 # figlet .vimrc | sed -n 's/^.*/"   &/p'
 
-# Colourful sudo prompt
-export SUDO_PROMPT="$(tput setab 1 setaf 0 bold)[sudo]$(tput sgr0) $(tput setaf 6)password for$(tput sgr0) $(tput setaf 5)%p$(tput sgr0): "
-
-sh /etc/profile.d/figurine.sh
-
-# batcat theme.
-export BAT_THEME="ansi-dark"
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="/root/.oh-my-zsh"
+export BROWSER=firefox
+export EDITOR=vim
+
+# PBS
+export PBS_REPOSITORY=10.1.1.1:pbs
+export PBS_PASSWORD_FILE=/root/.pbsfile
+export PBS_FINGERPRINT='fe:39:1e:18:b0:e6:ad:59:dd:f5:d1:be:5b:c9:f7:53:3e:00:8c:ad:01:4e:81:e6:e2:02:b6:c8:7d:52:7d:bd'
 
 # Use ripgrep for fzf and show hidden files
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
+
+function ssht () {/usr/bin/ssh -t $@ "tmux attach || tmux new";}
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -58,7 +59,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=6
+# export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
@@ -96,7 +97,8 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose debian colored-man-pages vi-mode z autoupdate fzf-tab zsh-autosuggestions zsh-syntax-highlighting history-substring-search)
+plugins=(git debian colored-man-pages vi-mode z autoupdate fzf-tab zsh-autosuggestions \
+    history-substring-search command-not-found zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -129,23 +131,20 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #                                    
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias adg="sudo apt update && sudo apt upgrade"
-alias aar="sudo apt autoremove"
-alias as="sudo apt search"
+alias adg="apt update && apt upgrade"
+alias aar="apt autoremove"
+alias as="apt search"
 alias p8="ping 8.8.8.8"
-alias ph="ping docker.lan"
-alias pf="ping pfsense.org"
 alias ip="ip -c=always"
-alias rm="rm -i"
-alias dip="docker image prune"
-alias dtail='docker logs -tf --tail='50' '
-alias v="nvim"
+alias v="~/Packages/nvim.appimage"
 
-source ~/.zsh_aliases
+### Funcion to auto expand alias after pressing space
+#function expand-alias(){
+#    zle _expand_alias
+#    zle self-insert
+#}
+#zle -N expand-alias
+#bindkey -M main ' ' expand-alias
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-
-LS_COLORS=$LS_COLORS:'ow=32;100:' ; export LS_COLORS
