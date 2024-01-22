@@ -150,4 +150,4 @@ alias v="~/nvim.appimage"
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # test
-echo "hello"
+sh /etc/profile.d/figurine.sh
