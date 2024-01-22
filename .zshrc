@@ -136,7 +136,7 @@ alias aar="apt autoremove"
 alias as="apt search"
 alias p8="ping 8.8.8.8"
 alias ip="ip -c=always"
-alias v="~/Packages/nvim.appimage"
+alias v="~/nvim.appimage"
 
 ### Funcion to auto expand alias after pressing space
 #function expand-alias(){
