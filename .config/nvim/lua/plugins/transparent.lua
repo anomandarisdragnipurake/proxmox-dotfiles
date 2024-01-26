@@ -8,7 +8,7 @@ return {
         "LSPInfoBorder",
         "NeoTreeNormal",
         "NeoTreeNormalNC",
-        "NormalFloat",
+        --"NormalFloat",
         "NotifyDEBUGBody",
         "NotifyDEBUGBorder",
         "NotifyERRORBody",
