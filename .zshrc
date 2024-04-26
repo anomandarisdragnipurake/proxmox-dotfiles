@@ -180,5 +180,9 @@ _fzf_compgen_dir() {
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
+# ----- Bat (better cat) -----
+
+export BAT_THEME=tokyonight_night
+
 # test
 sh /etc/profile.d/figurine.sh
