@@ -29,7 +29,7 @@ export PBS_PASSWORD_FILE=/root/.pbsfile
 export PBS_FINGERPRINT='fe:39:1e:18:b0:e6:ad:59:dd:f5:d1:be:5b:c9:f7:53:3e:00:8c:ad:01:4e:81:e6:e2:02:b6:c8:7d:52:7d:bd'
 
 # Use ripgrep for fzf and show hidden files
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
+#export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 
 function ssht () {/usr/bin/ssh -t $@ "tmux attach || tmux new";}
 
@@ -146,6 +146,9 @@ alias v="~/nvim.appimage"
 #zle -N expand-alias
 #bindkey -M main ' ' expand-alias
 
+# fzf manual install
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
 
@@ -161,20 +164,20 @@ export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${
 
 # -- Use fd instead of fzf --
 
-export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_DEFAULT_COMMAND="fdfind --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+export FZF_ALT_C_COMMAND="fdfind --type=d --hidden --strip-cwd-prefix --exclude .git"
 
 # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal
 # - See the source code (completion.{bash,zsh}) for the details.
 _fzf_compgen_path() {
-  fd --hidden --exclude .git . "$1"
+  fdfind --hidden --exclude .git . "$1"
 }
 
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-  fd --type=d --hidden --exclude .git . "$1"
+  fdfind --type=d --hidden --exclude .git . "$1"
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
